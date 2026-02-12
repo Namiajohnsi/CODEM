@@ -1,0 +1,15 @@
+let fullName = "Namia Johnsi";
+let emailId = "namia@gmail.com";
+let currentYear = 2026;
+
+let a = 10;
+let b = 5;
+
+console.log("Name:", fullName);
+console.log("Email:", emailId);
+console.log("Current Year:", currentYear);
+
+console.log("Addition:", a + b);
+console.log("Subtraction:", a - b);
+console.log("Multiplication:", a * b);
+console.log("Division:", a / b);
