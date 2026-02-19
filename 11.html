@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Weather Action Advisor</h2>
+
+<button onclick="weatherAdvisor('rainy', 25)">Rainy</button>
+<button onclick="weatherAdvisor('sunny', 40)">Sunny Hot</button>
+
+<script>
+function weatherAdvisor(condition, temp) {
+    if (condition === "rainy") alert("Carry umbrella");
+    else if (condition === "sunny" && temp > 35)
+        alert("Stay hydrated");
+    else alert("Enjoy your day");
+}
+</script>
+
+</body>
+</html>

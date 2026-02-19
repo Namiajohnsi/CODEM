@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Order & Discount Processor</h2>
+
+<button onclick="processOrder(3500, false, '')">Small</button>
+<button onclick="processOrder(1800, false, 'SAVE10')">Medium</button>
+<button onclick="processOrder(1000, true, 'ABC')">Large</button>
+
+<script>
+function validateCoupon(code) {
+    return code === "SAVE10";
+}
+
+function processOrder(orderAmount, isMember, couponCode) {
+    if (isNaN(orderAmount) || orderAmount <= 0) {
+        console.log("Invalid order amount");
+        return;
+    }
+
+    let discount = 0;
+
+    if (orderAmount >= 3000 || isMember) discount = 20;
+    else if (orderAmount >= 1500 && couponCode === "SAVE10") discount = 10;
+    else if (couponCode === "") discount = 0;
+    else discount = 5;
+
+    let finalAmount = orderAmount - (orderAmount * discount / 100);
+
+    if (finalAmount >= 2000) {
+        console.log("Free Delivery");
+    } else {
+        finalAmount += 100;
+        console.log("₹100 Delivery Added");
+    }
+
+    console.log("Final Amount:", finalAmount);
+    console.log("Coupon Valid:", validateCoupon(couponCode));
+}
+</script>
+
+</body>
+</html>

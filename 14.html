@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Notification Filter</h2>
+
+<button onclick="filterNotification('Server down!', true)">Important</button>
+
+<script>
+function filterNotification(message, isUrgent) {
+    let type = isUrgent ? "Important" : "Normal";
+    console.log(type + ": " + message);
+}
+</script>
+
+</body>
+</html>

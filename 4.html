@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Coin Toss Game</h2>
+
+<button onclick="coinToss('Heads')">Heads</button>
+<button onclick="coinToss('Tails')">Tails</button>
+
+<script>
+function coinToss(playerChoice) {
+    let choices = ["Heads", "Tails"];
+    let computerChoice = choices[Math.floor(Math.random() * 2)];
+
+    let result = playerChoice === computerChoice ? 
+        "Player wins" : "Player loses";
+
+    alert("Player: " + playerChoice +
+          "\nComputer: " + computerChoice +
+          "\nResult: " + result);
+}
+</script>
+
+</body>
+</html>

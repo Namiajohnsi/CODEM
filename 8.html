@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Message Priority Formatter</h2>
+
+<button onclick="processMessage('System error detected', false)">Test Message</button>
+
+<script>
+function processMessage(message, isUrgent) {
+    if (!message.trim()) {
+        console.log("Message cannot be empty");
+        return;
+    }
+
+    let hasWarningWord = message.includes("error") || message.includes("fail");
+    let isHighPriority = isUrgent || hasWarningWord;
+
+    let formatted = isHighPriority ?
+        "IMPORTANT: " + message.toUpperCase() :
+        "INFO: " + message.toLowerCase();
+
+    console.log(formatted);
+}
+</script>
+
+</body>
+</html>

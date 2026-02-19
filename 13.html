@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Appointment Confirmation</h2>
+
+<button onclick="checkAppointment(true, true)">Confirm</button>
+<button onclick="checkAppointment(false, true)">Reject</button>
+
+<script>
+function checkAppointment(dateAvailable, userConfirmed) {
+    if (!dateAvailable || !userConfirmed)
+        alert("Appointment Rejected");
+    else
+        alert("Appointment Confirmed");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Account Security Check</h2>
+
+<button onclick="checkAccount(true, true, false)">Login</button>
+
+<script>
+function checkAccount(passwordValid, otpVerified, isBlocked) {
+    if (passwordValid && otpVerified && !isBlocked)
+        alert("Login Success");
+    else
+        alert("Login Failed");
+}
+</script>
+
+</body>
+</html>

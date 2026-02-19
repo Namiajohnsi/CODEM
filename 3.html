@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Online Order Status</h2>
+
+<button onclick="checkOrder(true, true)">Paid + In Stock</button>
+<button onclick="checkOrder(true, false)">Paid + Out of Stock</button>
+<button onclick="checkOrder(false, true)">Not Paid</button>
+
+<script>
+function checkOrder(isPaid, inStock) {
+    if (!isPaid) alert("Payment required");
+    else if (isPaid && inStock) alert("Order confirmed");
+    else alert("Order delayed");
+}
+</script>
+
+</body>
+</html>

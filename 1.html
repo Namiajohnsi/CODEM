@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Login Access System</h2>
+
+<button onclick="handleLogin('admin')">Admin</button>
+<button onclick="handleLogin('user')">User</button>
+<button onclick="handleLogin('guest')">Guest</button>
+
+<script>
+function validateLogin(username, password) {
+    return password === "1234";
+}
+
+function handleLogin(role) {
+    let isValid = validateLogin(role, "1234");
+
+    if (!isValid) {
+        alert("Invalid credentials");
+        return;
+    }
+
+    if (role === "admin") alert("Full access granted");
+    else if (role === "user") alert("Limited access granted");
+    else alert("Read-only access");
+}
+</script>
+
+</body>
+</html>
