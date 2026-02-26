@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 3</title>
+</head>
+<body>
+
+<script>
+let cart = {
+    items: [
+        { name: "Pen", price: 10, quantity: 3 },
+        { name: "Notebook", price: 50, quantity: 2 },
+        { name: "Bag", price: 500, quantity: 1 }
+    ]
+};
+
+let total = 0;
+
+cart.items.forEach(function(item) {
+    total += item.price * item.quantity;
+});
+
+console.log("Total Cart Price:", total);
+</script>
+
+</body>
+</html>

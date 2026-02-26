@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 12</title>
+</head>
+<body>
+
+<form id="myForm">
+    <input type="text" id="username" placeholder="Name">
+    <span id="nameError"></span><br><br>
+
+    <input type="email" id="email" placeholder="Email">
+    <span id="emailError"></span><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+let form = document.getElementById("myForm");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("username");
+    let email = document.getElementById("email");
+
+    let valid = true;
+
+    if (name.value.trim() === "") {
+        document.getElementById("nameError").textContent = "Name required";
+        valid = false;
+    } else {
+        document.getElementById("nameError").textContent = "";
+    }
+
+    if (email.value.trim() === "") {
+        document.getElementById("emailError").textContent = "Email required";
+        valid = false;
+    } else {
+        document.getElementById("emailError").textContent = "";
+    }
+
+    if (valid) {
+        console.log("Form Submitted Successfully");
+    }
+});
+</script>
+
+</body>
+</html>

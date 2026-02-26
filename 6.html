@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 7</title>
+<style>
+.highlight { background-color: yellow; color: red; }
+.box { padding: 10px; border: 1px solid black; margin: 5px; }
+</style>
+</head>
+<body>
+
+<button id="toggleBtn">Toggle</button>
+<div class="box">Box 1</div>
+<div class="box">Box 2</div>
+
+<script>
+let btn = document.getElementById("toggleBtn");
+let boxes = document.querySelectorAll(".box");
+
+btn.addEventListener("click", function() {
+    boxes.forEach(function(box) {
+        box.classList.toggle("highlight");
+    });
+});
+</script>
+
+</body>
+</html>

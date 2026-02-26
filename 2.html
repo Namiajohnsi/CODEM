@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 2</title>
+</head>
+<body>
+
+<script>
+let product = {
+    name: "Mobile",
+    price: 20000,
+    stock: 15
+};
+
+function updateProduct(obj) {
+    obj.price += 2000;
+    obj.stock -= 3;
+    return `Product: ${obj.name}, Updated Price: ${obj.price}, Remaining Stock: ${obj.stock}`;
+}
+
+let result = updateProduct(product);
+console.log(result);
+console.log("Updated Product Object:", product);
+</script>
+
+</body>
+</html>

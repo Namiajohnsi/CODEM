@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 14</title>
+</head>
+<body>
+
+<p id="keyOutput">Press any key...</p>
+
+<script>
+let display = document.getElementById("keyOutput");
+
+document.addEventListener("keydown", function(event) {
+    display.textContent = "Key Down: " + event.key;
+});
+
+document.addEventListener("keyup", function(event) {
+    display.textContent = "Key Up: " + event.key;
+});
+</script>
+
+</body>
+</html>

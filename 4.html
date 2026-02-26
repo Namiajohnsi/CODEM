@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 4</title>
+</head>
+<body>
+
+<script>
+let students = {
+    Ravi: 80,
+    Meena: 32,
+    Karthik: 45,
+    Divya: 28
+};
+
+let passMark = 35;
+
+for (let student in students) {
+    let mark = students[student];
+    let status = mark >= passMark ? "Pass" : "Fail";
+    console.log(`Name: ${student}, Mark: ${mark}, Result: ${status}`);
+}
+</script>
+
+</body>
+</html>

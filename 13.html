@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 13</title>
+<style>
+.invalid {
+    border: 2px solid red;
+}
+</style>
+</head>
+<body>
+
+<form>
+    <input type="email" id="email" placeholder="Enter Email">
+    <span id="emailError"></span>
+</form>
+
+<script>
+let emailInput = document.getElementById("email");
+
+emailInput.addEventListener("input", function() {
+    if (!emailInput.value.includes("@")) {
+        emailInput.classList.add("invalid");
+        document.getElementById("emailError").textContent = "Invalid Email";
+    } else {
+        emailInput.classList.remove("invalid");
+        document.getElementById("emailError").textContent = "";
+    }
+});
+</script>
+
+</body>
+</html>

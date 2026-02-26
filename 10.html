@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 10</title>
+</head>
+<body>
+
+<button id="toggleImage">Show/Hide</button>
+<img id="image" src="https://via.placeholder.com/100">
+
+<script>
+let button = document.getElementById("toggleImage");
+let image = document.getElementById("image");
+
+button.addEventListener("click", function() {
+    if (image.hasAttribute("hidden")) {
+        image.removeAttribute("hidden");
+    } else {
+        image.setAttribute("hidden", "true");
+    }
+    console.log("Hidden Attribute:", image.hasAttribute("hidden"));
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 8</title>
+</head>
+<body>
+
+<div id="container"></div>
+
+<script>
+let users = [
+    { name: "Namia", age: 20 },
+    { name: "Raj", age: 22 }
+];
+
+let container = document.getElementById("container");
+let ul = document.createElement("ul");
+
+users.forEach(function(user) {
+    let li = document.createElement("li");
+    li.textContent = `${user.name} - Age: ${user.age}`;
+    ul.appendChild(li);
+});
+
+container.appendChild(ul);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 15</title>
+<style>
+.completed {
+    text-decoration: line-through;
+}
+</style>
+</head>
+<body>
+
+<script>
+let todoData = [];
+
+let input = document.createElement("input");
+let addBtn = document.createElement("button");
+let todoList = document.createElement("ul");
+
+addBtn.textContent = "Add Task";
+
+document.body.appendChild(input);
+document.body.appendChild(addBtn);
+document.body.appendChild(todoList);
+
+addBtn.addEventListener("click", function() {
+
+    if (input.value.trim() === "") return;
+
+    let task = {
+        text: input.value,
+        completed: false
+    };
+
+    todoData.push(task);
+
+    let li = document.createElement("li");
+    li.textContent = task.text;
+
+    li.addEventListener("click", function() {
+        task.completed = !task.completed;
+        li.classList.toggle("completed");
+    });
+
+    let removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+
+    removeBtn.addEventListener("click", function() {
+        todoList.removeChild(li);
+        todoData = todoData.filter(t => t !== task);
+    });
+
+    li.appendChild(removeBtn);
+    todoList.appendChild(li);
+
+    input.value = "";
+});
+</script>
+
+</body>
+</html>

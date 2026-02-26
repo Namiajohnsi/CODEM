@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 9</title>
+</head>
+<body>
+
+<div class="parent">
+    <p class="child">Child 1</p>
+    <p>Child 2</p>
+</div>
+
+<script>
+let child = document.querySelector(".child");
+let parent = child.parentElement;
+parent.style.backgroundColor = "lightblue";
+
+let firstChild = parent.firstElementChild;
+firstChild.textContent = "Modified Child 1";
+
+let sibling = child.nextElementSibling;
+sibling.style.color = "green";
+</script>
+
+</body>
+</html>
