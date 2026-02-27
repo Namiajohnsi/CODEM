@@ -1,48 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Task 12</title>
+<title>Task 11</title>
 </head>
 <body>
 
-<form id="myForm">
-    <input type="text" id="username" placeholder="Name">
-    <span id="nameError"></span><br><br>
+<button class="action">Button 1</button>
+<button class="action">Button 2</button>
+<button class="action">Button 3</button>
 
-    <input type="email" id="email" placeholder="Email">
-    <span id="emailError"></span><br><br>
-
-    <button type="submit">Submit</button>
-</form>
+<p id="output"></p>
 
 <script>
-let form = document.getElementById("myForm");
+let buttons = document.querySelectorAll(".action");
+let output = document.getElementById("output");
 
-form.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    let name = document.getElementById("username");
-    let email = document.getElementById("email");
-
-    let valid = true;
-
-    if (name.value.trim() === "") {
-        document.getElementById("nameError").textContent = "Name required";
-        valid = false;
-    } else {
-        document.getElementById("nameError").textContent = "";
-    }
-
-    if (email.value.trim() === "") {
-        document.getElementById("emailError").textContent = "Email required";
-        valid = false;
-    } else {
-        document.getElementById("emailError").textContent = "";
-    }
-
-    if (valid) {
-        console.log("Form Submitted Successfully");
-    }
+buttons.forEach(function(btn) {
+    btn.addEventListener("click", function(event) {
+        output.textContent =
+        `Clicked: ${event.target.textContent}, Event Type: ${event.type}`;
+    });
 });
 </script>
 
