@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Task 8</title>
+<title>Task 7</title>
+<style>
+.highlight { background-color: yellow; color: red; }
+.box { padding: 10px; border: 1px solid black; margin: 5px; }
+</style>
 </head>
 <body>
 
-<div id="container"></div>
+<button id="toggleBtn">Toggle</button>
+<div class="box">Box 1</div>
+<div class="box">Box 2</div>
 
 <script>
-let users = [
-    { name: "Namia", age: 20 },
-    { name: "Raj", age: 22 }
-];
+let btn = document.getElementById("toggleBtn");
+let boxes = document.querySelectorAll(".box");
 
-let container = document.getElementById("container");
-let ul = document.createElement("ul");
-
-users.forEach(function(user) {
-    let li = document.createElement("li");
-    li.textContent = `${user.name} - Age: ${user.age}`;
-    ul.appendChild(li);
+btn.addEventListener("click", function() {
+    boxes.forEach(function(box) {
+        box.classList.toggle("highlight");
+    });
 });
-
-container.appendChild(ul);
 </script>
 
 </body>
