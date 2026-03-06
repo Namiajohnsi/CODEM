@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="grid" style="display: grid; grid-template-columns: repeat(3, 50px);"></div>
+    <script>
+        let colors = ["red", "blue", "green", "yellow"];
+        let grid = document.getElementById('grid');
+        for (let i = 0; i < 9; i++) {
+            let div = document.createElement('div');
+            div.style.width = "50px";
+            div.style.height = "50px";
+            div.style.backgroundColor = colors[i % colors.length];
+            grid.appendChild(div);
+        }
+    </script>
+</body>
+</html>

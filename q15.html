@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <input type="password" id="pw" oninput="check()">
+    <ul id="rules"></ul>
+    <script>
+        let rules = [
+            { label: "8+ chars", check: p => p.length >= 8 },
+            { label: "Uppercase", check: p => /[A-Z]/.test(p) },
+            { label: "Number", check: p => /[0-9]/.test(p) }
+        ];
+        function check() {
+            const val = document.getElementById('pw').value;
+            document.getElementById('rules').innerHTML = rules.map(r => 
+                `<li style="color: ${r.check(val) ? 'green' : 'red'}">${r.label}</li>`).join('');
+        }
+        check();
+    </script>
+</body>
+</html>

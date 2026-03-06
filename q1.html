@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Scoreboard</h2>
+    <div id="display"></div>
+    <p>Highest: <span id="hi">0</span> | Lowest: <span id="lo">0</span></p>
+    <style>
+        button {
+            margin-left: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background: blue;
+            color: white;
+            border-radius: 5px;
+            
+        
+        }
+    </style>
+    <script>
+        let scores = [10, 15, 8];
+        function render() {
+            const container = document.getElementById('display');
+            container.innerHTML = "";
+            scores.forEach((s, i) => {
+                const div = document.createElement('div');
+                div.innerHTML = `Player ${i+1}: ${s} 
+                    <button onclick="change(${i}, 1)">+</button>
+                    <button onclick="change(${i}, -1)">-</button>`;
+                container.appendChild(div);
+            });
+            document.getElementById('hi').innerText = Math.max(...scores);
+            document.getElementById('lo').innerText = Math.min(...scores);
+        }
+        function change(i, v) {
+            scores[i] += v;
+            render();
+        }
+        render();
+    </script>
+</body>
+</html>

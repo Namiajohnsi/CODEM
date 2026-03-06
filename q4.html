@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <table border="1" id="ut">
+        <thead><tr><th>Name</th><th>Age</th><th>Email</th><th>Action</th></tr></thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        let users = [{name: "Ali", age: 22, email: "ali@mail.com"}, {name: "Sara", age: 25, email: "sara@mail.com"}];
+        function render() {
+            const b = document.querySelector('#ut tbody');
+            b.innerHTML = "";
+            users.forEach((u, i) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><input value="${u.name}" id="n${i}" disabled></td>
+                    <td><input type="number" value="${u.age}" id="a${i}" disabled></td>
+                    <td>${u.email}</td>
+                    <td><button onclick="edit(${i}, this)">Edit</button></td>`;
+                b.appendChild(tr);
+            });
+        }
+        function edit(i, btn) {
+            const ni = document.getElementById(`n${i}`), ai = document.getElementById(`a${i}`);
+            if (btn.innerText === "Edit") {
+                ni.disabled = ai.disabled = false;
+                btn.innerText = "Save";
+            } else {
+                users[i].name = ni.value;
+                users[i].age = ai.value;
+                btn.innerText = "Edit";
+                render();
+            }
+        }
+        render();
+    </script>
+</body>
+</html>

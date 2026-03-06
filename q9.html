@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="inv"></div>
+    <script>
+        let inventory = [{ product: "Pen", quantity: 10 }, { product: "Notebook", quantity: 5 }, { product: "Eraser", quantity: 0 }];
+        function render() {
+            const container = document.getElementById('inv');
+            container.innerHTML = inventory.map((item, i) => `
+                <div>${item.product}: ${item.quantity} 
+                <button onclick="change(${i}, 1)">+</button>
+                <button onclick="change(${i}, -1)">-</button></div>
+            `).join('');
+        }
+        function change(i, v) {
+            if (inventory[i].quantity + v >= 0) {
+                inventory[i].quantity += v;
+                render();
+            }
+        }
+        render();
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="exp"></div>
+    <div id="cat-totals"></div>
+    <script>
+        let expenses = [{ category: "Food", amount: 200 }, { category: "Travel", amount: 500 }, { category: "Food", amount: 300 }];
+        let totals = {};
+        let grand = 0;
+        expenses.forEach(e => {
+            totals[e.category] = (totals[e.category] || 0) + e.amount;
+            grand += e.amount;
+        });
+        document.getElementById('cat-totals').innerHTML = Object.entries(totals).map(([c, a]) => `<p>${c}: ${a}</p>`).join('') + `<b>Grand Total: ${grand}</b>`;
+    </script>
+</body>
+</html>

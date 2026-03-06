@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="items"></div>
+    <script>
+        let items = ["Item A", "Item B", "Item C", "Item D"];
+        function render() {
+            const container = document.getElementById('items');
+            container.innerHTML = items.map((item, i) => `
+                <div>${item} 
+                <button onclick="move(${i}, -1)" ${i === 0 ? 'disabled' : ''}>Up</button>
+                <button onclick="move(${i}, 1)" ${i === items.length - 1 ? 'disabled' : ''}>Down</button></div>
+            `).join('');
+        }
+        function move(i, dir) {
+            [items[i], items[i + dir]] = [items[i + dir], items[i]];
+            render();
+        }
+        render();
+    </script>
+</body>
+</html>

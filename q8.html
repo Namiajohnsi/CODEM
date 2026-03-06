@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="list"></div>
+    <p>Present: <span id="p-count">0</span> | Absent: <span id="a-count">0</span></p>
+    <script>
+        let students = [{ name: "Ali", present: true }, { name: "Sara", present: false }];
+        function render() {
+            const container = document.getElementById('list');
+            container.innerHTML = "";
+            let p = 0, a = 0;
+            students.forEach((s, i) => {
+                s.present ? p++ : a++;
+                container.innerHTML += `<p>${s.name} - ${s.present ? 'Present' : 'Absent'} 
+                    <button onclick="toggle(${i})">Toggle</button></p>`;
+            });
+            document.getElementById('p-count').innerText = p;
+            document.getElementById('a-count').innerText = a;
+        }
+        function toggle(i) { students[i].present = !students[i].present; render(); }
+        render();
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form id="f"></form>
+    <button onclick="submit()">Submit</button>
+    <script>
+        let fields = [{type: "text", label: "Name"}, {type: "email", label: "Email"}];
+        let formData = [];
+        const f = document.getElementById('f');
+        fields.forEach(obj => {
+            f.innerHTML += `<label>${obj.label}</label><input type="${obj.type}" class="inp"><br>`;
+        });
+        function submit() {
+            formData = Array.from(document.querySelectorAll('.inp')).map(i => i.value);
+            console.log(formData);
+            alert("Check console for data: " + formData.join(', '));
+        }
+    </script>
+</body>
+</html>

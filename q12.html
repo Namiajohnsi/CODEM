@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="quiz"></div>
+    <script>
+        let quiz = [
+            { question: "What is JS?", options: ["Language", "Database"], answer: "Language" },
+            { question: "Keyword for variable?", options: ["var", "print"], answer: "var" }
+        ];
+        let current = 0, score = 0;
+        function render() {
+            const container = document.getElementById('quiz');
+            if (current >= quiz.length) {
+                container.innerHTML = `Quiz Over! Score: ${score}`;
+                return;
+            }
+            let q = quiz[current];
+            container.innerHTML = `<h3>${q.question}</h3>` + 
+                q.options.map(o => `<button onclick="check('${o}')">${o}</button>`).join('');
+        }
+        function check(opt) {
+            if (opt === quiz[current].answer) score++;
+            current++;
+            render();
+        }
+        render();
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="p-list"></div>
+    <div id="totals"></div>
+    <script>
+        let prices = [100, 200, 300];
+        let total = prices.reduce((a, b) => a + b, 0);
+        let tax = total * 0.10;
+        let discount = (total + tax) * 0.05;
+        let final = (total + tax) - discount;
+        document.getElementById('p-list').innerHTML = prices.map(p => `<p>Price: ${p}</p>`).join('');
+        document.getElementById('totals').innerHTML = `Total: ${total}<br>Tax: ${tax}<br>Discount: ${discount}<br>Final: ${final}`;
+    </script>
+</body>
+</html>

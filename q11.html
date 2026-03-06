@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="viz" style="display:flex; align-items:flex-end; height:100px; gap:5px;"></div>
+    <button onclick="sort()">Sort</button>
+    <script>
+        let numbers = [50, 20, 40, 10, 30];
+        function render(arr) {
+            const container = document.getElementById('viz');
+            container.innerHTML = arr.map(n => `<div style="width:20px; height:${n}px; background:blue;"></div>`).join('');
+        }
+        async function sort() {
+            for (let i = 0; i < numbers.length; i++) {
+                for (let j = 0; j < numbers.length - i - 1; j++) {
+                    if (numbers[j] > numbers[j + 1]) {
+                        [numbers[j], numbers[j + 1]] = [numbers[j + 1], numbers[j]];
+                        render(numbers);
+                        await new Promise(r => setTimeout(r, 400));
+                    }
+                }
+            }
+        }
+        render(numbers);
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <select id="cat" onchange="filter()">
+        <option value="All">All</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Clothing">Clothing</option>
+    </select>
+    <input type="number" id="min" placeholder="Min" oninput="filter()">
+    <input type="number" id="max" placeholder="Max" oninput="filter()">
+    <div id="list"></div>
+
+    <script>
+        let products = [
+            { name: "Laptop", price: 50000, category: "Electronics" },
+            { name: "Shirt", price: 1200, category: "Clothing" },
+            { name: "Phone", price: 20000, category: "Electronics" }
+        ];
+        function filter() {
+            const c = document.getElementById('cat').value;
+            const mn = Number(document.getElementById('min').value) || 0;
+            const mx = Number(document.getElementById('max').value) || Infinity;
+            const filtered = products.filter(p => (c === "All" || p.category === c) && p.price >= mn && p.price <= mx);
+            const res = document.getElementById('list');
+            res.innerHTML = filtered.length ? filtered.map(p => `<p>${p.name} - ${p.price}</p>`).join('') : "No products found";
+        }
+        filter();
+    </script>
+</body>
+</html>

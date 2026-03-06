@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <input type="text" id="s" oninput="search()" placeholder="Search...">
+    <ul id="l"></ul>
+    <script>
+        let texts = ["JavaScript", "Java", "Python", "React"];
+        function search() {
+            const term = document.getElementById('s').value.toLowerCase();
+            const filtered = texts.filter(t => t.toLowerCase().includes(term));
+            const list = document.getElementById('l');
+            list.innerHTML = filtered.length ? filtered.map(t => `<li>${t}</li>`).join('') : "No results found";
+        }
+        search();
+    </script>
+</body>
+</html>

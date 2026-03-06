@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="content"></div>
+    <button id="p" onclick="nav(-1)">Prev</button>
+    <button id="n" onclick="nav(1)">Next</button>
+
+    <script>
+        let data = Array.from({length: 20}, (_, i) => i + 1);
+        let cur = 0;
+        function render() {
+            const start = cur * 5;
+            document.getElementById('content').innerText = data.slice(start, start + 5).join(', ');
+            document.getElementById('p').disabled = cur === 0;
+            document.getElementById('n').disabled = start + 5 >= data.length;
+        }
+        function nav(d) { cur += d; render(); }
+        render();
+    </script>
+</body>
+</html>

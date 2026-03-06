@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="dash"></div>
+    <script>
+        let users = [1, 2, 3, 4], orders = [500, 1200, 800], revenue = [5000, 3000];
+        function render() {
+            const sum = arr => arr.reduce((a, b) => a + b, 0);
+            document.getElementById('dash').innerHTML = `
+                <p>Total Users: ${users.length}</p>
+                <p>Total Orders: ${orders.length}</p>
+                <p>Total Revenue: ₹${sum(revenue)}</p>`;
+        }
+        render();
+    </script>
+</body>
+</html>

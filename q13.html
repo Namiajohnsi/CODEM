@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <input id="ci"><button onclick="add()">Submit</button>
+    <div id="cl"></div>
+    <script>
+        let comments = [];
+        function render() {
+            const container = document.getElementById('cl');
+            if (comments.length === 0) { container.innerHTML = "No Comments"; return; }
+            container.innerHTML = comments.slice(-5).reverse().map(c => `<p>${c}</p>`).join('');
+        }
+        function add() {
+            comments.push(document.getElementById('ci').value);
+            document.getElementById('ci').value = "";
+            render();
+        }
+        render();
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <textarea id="txt" oninput="update()"></textarea>
+    <button onclick="save()">Submit</button>
+    <p>Characters: <span id="count">0</span></p>
+    <p>Longest Input: <span id="long">None</span></p>
+    <script>
+        let inputs = [];
+        function update() {
+            const val = document.getElementById('txt').value;
+            document.getElementById('count').innerText = val.length;
+        }
+        function save() {
+            const val = document.getElementById('txt').value;
+            inputs.push(val);
+            let longest = inputs.reduce((a, b) => a.length > b.length ? a : b, "");
+            document.getElementById('long').innerText = longest;
+            document.getElementById('txt').value = "";
+            update();
+        }
+    </script>
+</body>
+</html>
