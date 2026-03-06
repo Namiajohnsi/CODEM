@@ -1,39 +1,26 @@
-<!DOCTYPE html>
-<html>
-<body>
-    <table border="1" id="ut">
-        <thead><tr><th>Name</th><th>Age</th><th>Email</th><th>Action</th></tr></thead>
-        <tbody></tbody>
-    </table>
+<h2>Duplicate Highlighter</h2>
+<ul id="itemList"></ul>
 
-    <script>
-        let users = [{name: "Ali", age: 22, email: "ali@mail.com"}, {name: "Sara", age: 25, email: "sara@mail.com"}];
-        function render() {
-            const b = document.querySelector('#ut tbody');
-            b.innerHTML = "";
-            users.forEach((u, i) => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td><input value="${u.name}" id="n${i}" disabled></td>
-                    <td><input type="number" value="${u.age}" id="a${i}" disabled></td>
-                    <td>${u.email}</td>
-                    <td><button onclick="edit(${i}, this)">Edit</button></td>`;
-                b.appendChild(tr);
-            });
-        }
-        function edit(i, btn) {
-            const ni = document.getElementById(`n${i}`), ai = document.getElementById(`a${i}`);
-            if (btn.innerText === "Edit") {
-                ni.disabled = ai.disabled = false;
-                btn.innerText = "Save";
-            } else {
-                users[i].name = ni.value;
-                users[i].age = ai.value;
-                btn.innerText = "Edit";
-                render();
-            }
-        }
-        render();
-    </script>
-</body>
-</html>
+<script>
+let items = ["apple", "banana", "apple", "orange", "banana"];
+
+let list = document.getElementById("itemList");
+
+for (let i = 0; i < items.length; i++) {
+  let li = document.createElement("li");
+  li.innerText = items[i];
+
+  let count = 0;
+  for (let j = 0; j < items.length; j++) {
+    if (items[i] === items[j]) {
+      count++;
+    }
+  }
+
+  if (count > 1) {
+    li.style.backgroundColor = "yellow";
+  }
+
+  list.appendChild(li);
+}
+</script>
