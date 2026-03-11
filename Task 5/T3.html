@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>call back function implementation</title>
+</head>
+<body>
+    <script>
+        function processnum(num,callback){
+            return callback(num);
+        }
+        function half(num){
+            return num/2;
+        }
+        function double(num){
+            return num*2;
+        }
+        let halfnum=processnum(4,half);
+        let doublenum=processnum(5,double);
+        console.log("Half of given number:"+halfnum);
+        console.log("Double of given number:"+doublenum);
+    </script>
+</body>
