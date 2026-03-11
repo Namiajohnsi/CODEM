@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validation Email Format Check</title>
+</head>
+<body>
+
+<form onsubmit="return checkEmail()">
+Email: <input type="text" id="email">
+<button type="submit">Submit</button>
+</form>
+
+<script>
+function checkEmail(){
+let email=document.getElementById("email").value;
+
+if(email.includes("@") && email.includes(".")){
+console.log("Valid Email");
+return true;
+}else{
+console.log("Invalid Email");
+return false;
+}
+}
+</script>
+
+</body>
+</html>

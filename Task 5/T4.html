@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Function with Default Parameters</title>
+</head>
+<body>
+
+<script>
+function calculateDiscount(price,discount=10){
+return price-(price*discount/100);
+}
+
+console.log("With Discount:",calculateDiscount(1000,20));
+console.log("Default Discount:",calculateDiscount(1000));
+</script>
+
+</body>
+</html>

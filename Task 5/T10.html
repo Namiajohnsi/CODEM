@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Advanced Function Validation Utility</title>
+</head>
+<body>
+
+<form onsubmit="return mainValidate()">
+Name: <input type="text" id="name"><br><br>
+Email: <input type="text" id="email"><br><br>
+Password: <input type="password" id="pass"><br><br>
+<button type="submit">Submit</button>
+</form>
+
+<script>
+function isEmpty(value){
+return value=="";
+}
+
+function validEmail(email){
+return email.includes("@") && email.includes(".");
+}
+
+function validPassword(pass){
+return pass.length>=8;
+}
+
+function mainValidate(){
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let pass=document.getElementById("pass").value;
+
+if(isEmpty(name) || isEmpty(email) || isEmpty(pass)){
+console.log("Fields Empty");
+return false;
+}
+
+if(!validEmail(email)){
+console.log("Invalid Email");
+return false;
+}
+
+if(!validPassword(pass)){
+console.log("Password too short");
+return false;
+}
+
+console.log("Form Valid");
+return true;
+}
+</script>
+
+</body>
+</html>

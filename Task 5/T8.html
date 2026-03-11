@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validation Password Length Check</title>
+</head>
+<body>
+
+<form onsubmit="return checkPassword()">
+Password: <input type="password" id="pass">
+<button type="submit">Submit</button>
+</form>
+
+<script>
+function checkPassword(){
+let pass=document.getElementById("pass").value;
+
+if(pass.length>=8){
+console.log("Password Valid");
+return true;
+}else{
+console.log("Password must be at least 8 characters");
+return false;
+}
+}
+</script>
+
+</body>
+</html>
