@@ -1,0 +1,248 @@
+Practice Task 1 – Modules and File System
+Task 1 – Random Quote Generator (Module Practice)
+Requirements
+1. Create a module named quotes.js.
+2. Store at least 5 motivational quotes inside an array.
+3. Export a function called getRandomQuote() that returns one random quote.
+4. Create another file app.js.
+5. Import the module and print a random quote.
+6. Example Output
+a. Quote of the Day:
+"Success is not final, failure is not fatal."
+Task 2 – Username File Reader
+Requirements
+1. Create a file users.txt with the following content:
+John
+Alice
+Rahul
+Sara
+2. Write a Node.js program that:
+a. Reads the file using fs.readFile
+b. Prints each username with a number.
+c. Example Output
+User List
+1. John
+2. Alice
+3. Rahul
+4. Sara
+Task 3 – Create a Number Logger
+Requirements
+1. Create a module numberLogger.js.
+2. Export a function logNumber(number).
+3. The function should:
+a. Append the number to a file named numbers.txt.
+4. Create a main file app.js to test the module.
+5. Example Call
+logNumber(10)
+logNumber(25)
+logNumber(40)
+6. Example File Content (numbers.txt)
+10
+25
+40
+Task 4 – File Word Counter
+Requirements
+1. Create a file paragraph.txt:
+“Node.js is fast and efficient. Node.js is widely used.”
+2. Write a Node.js program that:
+a. Reads the file
+b. Counts the total number of words
+c. Prints the count.
+3. Example Output
+Total Words: 9
+Task 5 – Uppercase File Creator
+Requirements
+1. Create a file message.txt
+“node js makes backend development easier”
+2. Write a Node.js program that:
+a. Reads the file
+b. Converts the text to uppercase
+c. Writes it into a new file uppercase.txt
+3. Example Output
+a. File converted successfully
+4. Expected File Content
+“NODE JS MAKES BACKEND DEVELOPMENT EASIER”
+Task 6 – Directory File Counter
+Requirements
+1. Create a folder named documents.
+2. Place at least 4 files inside the folder.
+3. Write a Node.js script that:
+a. Reads the directory
+b. Counts the number of files.
+4. Example Output
+Total Files in documents folder: 4
+Task 7 – Simple Note Saver (Module + FS)
+Requirements
+1. Create a module noteSaver.js.
+2. Export a function saveNote(noteText).
+3. The function should:
+a. Append the note to a file notes.txt
+b. Add a new line for each note.
+4. Create a main file that calls the function multiple times.
+5. Example Calls
+a. saveNote("Buy groceries")
+b. saveNote("Finish Node assignment")
+6. Example File Content
+Buy groceries
+Finish Node assignment
+Task 8 – File Size Checker
+Requirements
+1. Create a Node.js program that:
+a. Takes a filename
+b. Uses fs.stat
+c. Prints the file size.
+2. Example Output
+a. File: data.txt , Size: 120 bytes
+Task 9 – Text Search Tool
+Requirements
+1. Create a file article.txt
+“Node.js is powerful.
+ Many companies use Node.js.
+ Node.js is great for APIs.”
+2. Write a program that:
+a. Searches for the word "Node.js"
+b. Counts how many times it appears.
+3. Example Output
+Word "Node.js" found 3 times
+Task 10 – Student Data Writer
+Requirements
+1. Create a module studentWriter.js.
+2. Export a function saveStudent(name, age).
+3. The function should save student details into students.txt in the format:
+a. Name - Age
+4. Call the function multiple times.
+5. Example Calls
+a. saveStudent("John", 20)
+b. saveStudent("Sara", 22)
+6. Example File Content
+John - 20
+Sara – 22
+Task 11 – Random Number File Generator
+Requirements
+1. Create a module randomNumber.js.
+2. Export a function generateNumber() that returns a random number between 1 
+and 100.
+3. Create a program that:
+a. Calls the function 5 times
+b. Saves the numbers into randomNumbers.txt (each number on a new 
+line)
+4. Example File Content
+34
+87
+12
+56
+91
+Task 12 – Reverse File Content
+Requirements
+1. Create a file sentence.txt
+“Node.js makes backend development fast”
+2. Write a Node.js program that:
+a. Reads the file
+b. Reverses the entire sentence
+c. Saves it into reverse.txt
+3. Example Output File
+“tsaf tnempoleved dnekcab sekam sj.edoN”
+Task 13 – Even Number Filter
+Requirements
+1. Create a file numbers.txt
+1
+2
+3
+4
+5
+6
+7
+8
+1. Write a Node.js script that:
+a. Reads the file
+b. Filters only even numbers
+c. Saves them to evenNumbers.txt
+2. Example Output File
+2
+4
+6
+8
+Task 14 – Greeting Generator for Multiple Users
+Requirements
+1. Create a file names.txt
+John
+Sara
+Rahul
+2. Create a module greeting.js with function createGreeting(name).
+3. Write a program that:
+a. Reads all names
+b. Generates greeting messages
+c. Saves them into greetings.txt
+4. Example Output File
+Hello John!
+Hello Sara!
+Hello Rahul!
+Task 15 – File Backup Creator
+Requirements
+1. Create a file important.txt
+“This is very important data.”
+2. Write a Node.js program that:
+a. Reads the file
+b. Creates a backup file important_backup.txt
+c. Copies the content into it.
+3. Example Output
+“Backup created successfully”
+Task 16 – Line Counter
+Requirements
+1. Create a file story.txt
+“Once upon a time
+ There was a Node.js developer
+ Who loved coding”
+2. Write a Node.js program that:
+a. Reads the file
+b. Counts how many lines exist.
+3. Example Output
+Total Lines: 3
+Task 17 – Unique Word Extractor
+Requirements
+1. Create a file text.txt
+“node node javascript javascript backend backend api”
+2. Write a Node.js program that:
+a. Reads the file
+b. Extracts unique words
+c. Saves them into uniqueWords.txt
+3. Example Output File
+“node
+ javascript
+ backend
+ api”
+Task 18 – File Timestamp Logger
+Requirements
+1. Create a module timeLogger.js.
+2. Export a function logTime(message).
+3. The function should:
+a. Add current date and time
+b. Save message into timeLog.txt
+4. Example Call
+a. logTime("Server started")
+b. logTime("User logged in")
+5. Example File Content
+a. 2026-03-10 10:30:00 - Server started
+2026-03-10 10:35:22 - User logged in
+Task 19 – Directory File List Saver
+Requirements
+1. Create a folder assets with several files.
+2. Write a Node.js program that:
+a. Reads the directory
+b. Saves all filenames into fileList.txt
+3. Example Output File
+image.png
+logo.svg
+data.json
+Task 20 – JSON File Reader
+Requirements
+1. Create a file products.json
+a. [{ "name": "Laptop", "price": 800 },
+ { "name": "Phone", "price": 500 }]
+2. Write a Node.js program that:
+a. Reads the JSON file
+b. Prints product name and price.
+3. Example Output
+Product List
+Laptop - $800
+Phone - $500
