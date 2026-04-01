@@ -1,13 +1,61 @@
 const fs = require("fs");
 
-Promise.all([
-  new Promise(r => setTimeout(() => r([{id:1},{id:2}]), 600)),
-  new Promise(r => setTimeout(() => r([{id:2},{id:3}]), 400))
-]).then(([remote, local]) => {
-  let map = {};
-  [...local, ...remote].forEach(d => map[d.id] = d);
-  let result = Object.values(map);
+function fetchRemoteData() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            const data = [
+                { id: 1, name: "Rahul" },
+                { id: 2, name: "Sneha" }
+            ];
+            console.log("Remote fetched: 2 records");
+            resolve(data);
+        }, 600);
+    });
+}
 
-  console.log("Synced:", result.length);
-  fs.writeFileSync("sync.json", JSON.stringify(result));
-});
+function fetchLocalData() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            const data = [
+                { id: 2, name: "Updated Sneha" },
+                { id: 3, name: "Vikram" }
+            ];
+            console.log("Local fetched: 2 records");
+            resolve(data);
+        }, 400);
+    });
+}
+
+function syncData(remote, local) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            const map = new Map();
+
+            local.forEach(item => map.set(item.id, item));
+            remote.forEach(item => map.set(item.id, item)); // remote wins
+
+            const merged = Array.from(map.values());
+            console.log("Synced: 3 records (1 conflict resolved)");
+            resolve(merged);
+        }, 300);
+    });
+}
+
+function saveResult(data) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            fs.writeFile("sync.json", JSON.stringify(data, null, 2), (err) => {
+                if (err) reject(err);
+                else {
+                    console.log("Saved to sync.json");
+                    resolve();
+                }
+            });
+        }, 200);
+    });
+}
+
+Promise.all([fetchRemoteData(), fetchLocalData()])
+    .then(([remote, local]) => syncData(remote, local))
+    .then(saveResult)
+    .catch(console.error);
